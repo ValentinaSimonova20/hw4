@@ -17,6 +17,16 @@ class HomeWorkTest {
 
     @Test
     void managerFabric() {
+        TicketManager ticketManager = homeWork.managerFabric();
+        Ticket ticket1 = new Ticket("pension");
+        Ticket ticket2 = new Ticket("pension");
+        Ticket ticket3 = new Ticket("tmp2");
+        Ticket ticket4 = new Ticket("tmp5");
+        ticketManager.add(ticket2);
+        ticketManager.add(ticket1);
+        ticketManager.add(ticket3);
+        ticketManager.add(ticket4);
+        System.out.println();
     }
 
     @Test

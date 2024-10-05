@@ -5,7 +5,7 @@ import java.time.OffsetDateTime;
 /**
  * Можно изменять по своему усмотрению, не нарушая правила приоритезации очереди
  */
-public class Ticket {
+public class Ticket implements Comparable<Ticket> {
 
     private static int idSeq;
 
@@ -24,9 +24,27 @@ public class Ticket {
     /**
      * Приоритет для ранней регистрации
      */
-    OffsetDateTime registerTime = OffsetDateTime.now();
+    OffsetDateTime registerTime;
 
     public Ticket(String type) {
         this.type = type;
+        this.registerTime = OffsetDateTime.now();
+    }
+
+    @Override
+    public int compareTo(Ticket o) {
+        if(o == null) {
+            return 1;
+        }
+        if(this.type.equals("pension")) {
+            if(!o.type.equals("pension")) {
+                return -1;
+            }
+        } else {
+            if(o.type.equals("pension")) {
+                return 1;
+            }
+        }
+        return this.registerTime.compareTo(o.registerTime);
     }
 }
