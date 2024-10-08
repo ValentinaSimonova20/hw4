@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class HomeWorkTest {
+class CheckTest {
 
     HomeWork homeWork = new HomeWork();
 
@@ -26,7 +26,7 @@ class HomeWorkTest {
         ticketManager.add(ticket1);
         ticketManager.add(ticket3);
         ticketManager.add(ticket4);
-        System.out.println();
+
     }
 
     @Test
